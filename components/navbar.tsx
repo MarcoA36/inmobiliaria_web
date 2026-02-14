@@ -75,8 +75,8 @@ export function Navbar() {
 
         {/* Menu */}
         <div className="hidden md:flex items-center gap-8 text-sm tracking-wide">
-          <Link href="/">INICIO</Link>
-          <Link href="/empresa">EMPRESA</Link>
+          {/* <Link href="/">INICIO</Link> */}
+          <Link href="/empresa">NOSOTROS</Link>
           <Link href="#propiedades">ALQUILERES</Link>
           <Link href="#emprendimientos">VENTAS</Link>
           <Link href="/tasaciones">TASACIONES</Link>

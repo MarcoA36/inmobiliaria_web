@@ -9,7 +9,7 @@ import {
   
   export function TopBar() {
     return (
-      <div className="bg-black text-white text-xs">
+      <div className="bg-black/90 text-white text-xs">
         <div className="container mx-auto px-4 sm:px-6 h-8 flex items-center justify-between">
   
           {/* Redes */}

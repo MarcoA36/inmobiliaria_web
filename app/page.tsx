@@ -5,6 +5,7 @@ import { ContactForm } from "@/components/contact-form"
 import { WhatsAppButton } from "@/components/whatsapp-button"
 import { Footer } from "@/components/footer"
 import { TopBar } from "@/components/topbar"
+import { AboutSection } from "@/components/about-section"
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <Navbar />
       <Hero />
       <PropertiesSection />
+      <AboutSection/>
       <ContactForm />
       <WhatsAppButton />
       <Footer />
