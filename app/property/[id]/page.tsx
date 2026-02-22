@@ -24,9 +24,8 @@ export default async function PropertyDetailPage({
 
   return (
     <main className="min-h-screen">
-      <Navbar />
 
-      <div className="pt-24 pb-16 sm:pt-28 sm:pb-20 bg-background">
+      <div className="py-8 sm:pb-20 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <Link href="/#propiedades">
             <Button variant="ghost" className="mb-6 -ml-4 hover:bg-muted">
@@ -124,10 +123,6 @@ export default async function PropertyDetailPage({
           </div>
         </div>
       </div>
-
-      <ContactForm />
-      <WhatsAppButton />
-      <Footer />
     </main>
   );
 }

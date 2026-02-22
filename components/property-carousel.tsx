@@ -1,307 +1,198 @@
-// "use client"
+"use client";
 
-// import { useState } from "react"
-// import { ChevronLeft, ChevronRight } from "lucide-react"
-// import { Button } from "@/components/ui/button"
+import { useState, useEffect } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
-// interface PropertyCarouselProps {
-//   images: string[]
-//   alt: string
-// }
-
-// export function PropertyCarousel({ images, alt }: PropertyCarouselProps) {
-//   const [currentIndex, setCurrentIndex] = useState(0)
-
-//   const goToPrevious = () => {
-//     setCurrentIndex((prevIndex) => (prevIndex === 0 ? images.length - 1 : prevIndex - 1))
-//   }
-
-//   const goToNext = () => {
-//     setCurrentIndex((prevIndex) => (prevIndex === images.length - 1 ? 0 : prevIndex + 1))
-//   }
-
-//   const goToSlide = (index: number) => {
-//     setCurrentIndex(index)
-//   }
-
-//   return (
-//     <div className="relative w-full">
-//       {/* Main Image */}
-//       <div className="relative aspect-[16/10] sm:aspect-[16/9] overflow-hidden rounded-lg bg-muted">
-//         <img
-//           src={images[currentIndex] || "/placeholder.svg"}
-//           alt={`${alt} - Imagen ${currentIndex + 1}`}
-//           className="w-full h-full object-cover"
-//         />
-
-//         {/* Navigation Buttons */}
-//         {images.length > 1 && (
-//           <>
-//             <Button
-//               variant="secondary"
-//               size="icon"
-//               className="absolute left-4 top-1/2 -translate-y-1/2 bg-background/80 hover:bg-background/95 backdrop-blur-sm"
-//               onClick={goToPrevious}
-//             >
-//               <ChevronLeft className="h-5 w-5" />
-//             </Button>
-//             <Button
-//               variant="secondary"
-//               size="icon"
-//               className="absolute right-4 top-1/2 -translate-y-1/2 bg-background/80 hover:bg-background/95 backdrop-blur-sm"
-//               onClick={goToNext}
-//             >
-//               <ChevronRight className="h-5 w-5" />
-//             </Button>
-//           </>
-//         )}
-
-//         {/* Image Counter */}
-//         <div className="absolute bottom-4 right-4 bg-background/80 backdrop-blur-sm px-3 py-1.5 rounded-full text-sm font-medium">
-//           {currentIndex + 1} / {images.length}
-//         </div>
-//       </div>
-
-//       {/* Thumbnail Navigation */}
-//       {images.length > 1 && (
-//         <div className="flex gap-2 mt-4 overflow-x-auto pb-2">
-//           {images.map((image, index) => (
-//             <button
-//               key={index}
-//               onClick={() => goToSlide(index)}
-//               className={`relative flex-shrink-0 w-20 h-20 sm:w-24 sm:h-24 rounded-lg overflow-hidden border-2 transition-all ${
-//                 index === currentIndex
-//                   ? "border-primary ring-2 ring-primary/20"
-//                   : "border-transparent opacity-60 hover:opacity-100"
-//               }`}
-//             >
-//               <img
-//                 src={image || "/placeholder.svg"}
-//                 alt={`Miniatura ${index + 1}`}
-//                 className="w-full h-full object-cover"
-//               />
-//             </button>
-//           ))}
-//         </div>
-//       )}
-//     </div>
-//   )
-// }
-
-
-
-
-
-
-
-
-
-
-// "use client"
-
-// import { useState, useEffect } from "react"
-// import { ChevronLeft, ChevronRight } from "lucide-react"
-// import { Button } from "@/components/ui/button"
-
-// interface PropertyCarouselProps {
-//   images: string[]
-//   alt: string
-// }
-
-// export function PropertyCarousel({ images, alt }: PropertyCarouselProps) {
-//   const [currentIndex, setCurrentIndex] = useState(0)
-
-//   // Log inicial de props
-//   useEffect(() => {
-//     console.log("🚀 PropertyCarousel mounted")
-//     console.log("Images prop:", images)
-//     console.log("Alt prop:", alt)
-//   }, [])
-
-//   // Log cuando cambia la imagen actual
-//   useEffect(() => {
-//     console.log(`🖼 Mostrando imagen ${currentIndex + 1} de ${images.length}`)
-//     console.log("URL actual:", images[currentIndex])
-//   }, [currentIndex, images])
-
-//   const goToPrevious = () => {
-//     setCurrentIndex((prevIndex) => {
-//       const newIndex = prevIndex === 0 ? images.length - 1 : prevIndex - 1
-//       console.log("⬅️ goToPrevious ->", newIndex)
-//       return newIndex
-//     })
-//   }
-
-//   const goToNext = () => {
-//     setCurrentIndex((prevIndex) => {
-//       const newIndex = prevIndex === images.length - 1 ? 0 : prevIndex + 1
-//       console.log("➡️ goToNext ->", newIndex)
-//       return newIndex
-//     })
-//   }
-
-//   const goToSlide = (index: number) => {
-//     console.log("🔘 goToSlide ->", index)
-//     setCurrentIndex(index)
-//   }
-
-//   return (
-//     <div className="relative w-full">
-//       {/* Main Image */}
-//       <div className="relative aspect-[16/10] sm:aspect-[16/9] overflow-hidden rounded-lg bg-muted">
-//         <img
-//           src={images[currentIndex] || "/placeholder.svg"}
-//           alt={`${alt} - Imagen ${currentIndex + 1}`}
-//           className="w-full h-full object-cover"
-//         />
-
-//         {/* Navigation Buttons */}
-//         {images.length > 1 && (
-//           <>
-//             <Button
-//               variant="secondary"
-//               size="icon"
-//               className="absolute left-4 top-1/2 -translate-y-1/2 bg-background/80 hover:bg-background/95 backdrop-blur-sm"
-//               onClick={goToPrevious}
-//             >
-//               <ChevronLeft className="h-5 w-5" />
-//             </Button>
-//             <Button
-//               variant="secondary"
-//               size="icon"
-//               className="absolute right-4 top-1/2 -translate-y-1/2 bg-background/80 hover:bg-background/95 backdrop-blur-sm"
-//               onClick={goToNext}
-//             >
-//               <ChevronRight className="h-5 w-5" />
-//             </Button>
-//           </>
-//         )}
-
-//         {/* Image Counter */}
-//         <div className="absolute bottom-4 right-4 bg-background/80 backdrop-blur-sm px-3 py-1.5 rounded-full text-sm font-medium">
-//           {currentIndex + 1} / {images.length}
-//         </div>
-//       </div>
-
-//       {/* Thumbnail Navigation */}
-//       {images.length > 1 && (
-//         <div className="flex gap-2 mt-4 overflow-x-auto pb-2">
-//           {images.map((image, index) => (
-//             <button
-//               key={index}
-//               onClick={() => goToSlide(index)}
-//               className={`relative flex-shrink-0 w-20 h-20 sm:w-24 sm:h-24 rounded-lg overflow-hidden border-2 transition-all ${
-//                 index === currentIndex
-//                   ? "border-primary ring-2 ring-primary/20"
-//                   : "border-transparent opacity-60 hover:opacity-100"
-//               }`}
-//             >
-//               <img
-//                 src={image || "/placeholder.svg"}
-//                 alt={`Miniatura ${index + 1}`}
-//                 className="w-full h-full object-cover"
-//               />
-//             </button>
-//           ))}
-//         </div>
-//       )}
-//     </div>
-//   )
-// }
-
-"use client"
-
-import { useState, useEffect } from "react"
-import { ChevronLeft, ChevronRight } from "lucide-react"
-import { Button } from "@/components/ui/button"
+interface ImageItem {
+  id: string;
+  url: string;
+  type: string;
+}
 
 interface PropertyCarouselProps {
-  images: string[]
-  alt: string
+  images: ImageItem[];
+  alt: string;
 }
 
 export function PropertyCarousel({ images, alt }: PropertyCarouselProps) {
-  const [currentIndex, setCurrentIndex] = useState(0)
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isOpen, setIsOpen] = useState(false);
 
-  useEffect(() => {
-    console.log("🚀 Carousel mounted")
-    console.log("Images prop:", images)
-    console.log("Alt prop:", alt)
-  }, [images, alt])
+  if (!images || images.length === 0) return null;
 
-  useEffect(() => {
-    console.log(`🖼 Mostrando imagen ${currentIndex + 1} de ${images.length}`)
-    console.log("URL actual:", images[currentIndex])
-  }, [currentIndex, images])
+  const isVideo = (item: ImageItem) => {
+    return item.type?.startsWith("video");
+  };
+
+  // 🔥 Primera imagen disponible (no video)
+  const firstImage = images.find((item) => !isVideo(item));
+
+  const firstImageThumbnail = firstImage
+    ? `${firstImage.url}?width=300&height=300&fit=cover`
+    : null;
+
+  const currentItem = images[currentIndex];
+
+  // const isVideo = (item: ImageItem) => {
+  //   return item.type?.startsWith("video");
+  // };
 
   const goToPrevious = () => {
-    setCurrentIndex((prevIndex) => (prevIndex === 0 ? images.length - 1 : prevIndex - 1))
-  }
+    setCurrentIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+  };
 
   const goToNext = () => {
-    setCurrentIndex((prevIndex) => (prevIndex === images.length - 1 ? 0 : prevIndex + 1))
-  }
+    setCurrentIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+  };
 
-  const goToSlide = (index: number) => {
-    setCurrentIndex(index)
-  }
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [isOpen]);
 
   return (
     <div className="relative w-full">
+      {/* MAIN */}
       <div className="relative aspect-[16/10] sm:aspect-[16/9] overflow-hidden rounded-lg bg-muted">
-        <img
-          src={images[currentIndex] || "/placeholder.svg"}
-          alt={`${alt} - Imagen ${currentIndex + 1}`}
-          className="w-full h-full object-cover"
-        />
+        {isVideo(currentItem) ? (
+          <video
+            key={currentItem.url}
+            src={currentItem.url}
+            autoPlay
+            muted
+            loop
+            playsInline
+            controls
+            className="w-full h-full object-cover"
+          />
+        ) : (
+          <img
+            src={currentItem.url}
+            alt={`${alt} - ${currentIndex + 1}`}
+            className="w-full h-full object-cover cursor-zoom-in"
+            onClick={() => setIsOpen(true)}
+          />
+        )}
 
         {images.length > 1 && (
           <>
             <Button
               variant="secondary"
               size="icon"
-              className="absolute left-4 top-1/2 -translate-y-1/2 bg-background/80 hover:bg-background/95 backdrop-blur-sm"
+              className="absolute left-4 top-1/2 -translate-y-1/2 bg-background/80"
               onClick={goToPrevious}
             >
               <ChevronLeft className="h-5 w-5" />
             </Button>
+
             <Button
               variant="secondary"
               size="icon"
-              className="absolute right-4 top-1/2 -translate-y-1/2 bg-background/80 hover:bg-background/95 backdrop-blur-sm"
+              className="absolute right-4 top-1/2 -translate-y-1/2 bg-background/80"
               onClick={goToNext}
             >
               <ChevronRight className="h-5 w-5" />
             </Button>
           </>
         )}
-
-        <div className="absolute bottom-4 right-4 bg-background/80 backdrop-blur-sm px-3 py-1.5 rounded-full text-sm font-medium">
-          {currentIndex + 1} / {images.length}
-        </div>
       </div>
 
+      {/* THUMBNAILS */}
       {images.length > 1 && (
-        <div className="flex gap-2 mt-4 overflow-x-auto pb-2">
-          {images.map((image, index) => (
+        <div className="flex gap-2 mt-4 overflow-x-auto">
+          {images.map((item, index) => (
             <button
-              key={index}
-              onClick={() => goToSlide(index)}
-              className={`relative flex-shrink-0 w-20 h-20 sm:w-24 sm:h-24 rounded-lg overflow-hidden border-2 transition-all ${
+              key={item.id}
+              onClick={() => setCurrentIndex(index)}
+              className={`relative w-20 h-20 rounded-lg overflow-hidden border-2 ${
                 index === currentIndex
-                  ? "border-primary ring-2 ring-primary/20"
+                  ? "border-primary"
                   : "border-transparent opacity-60 hover:opacity-100"
               }`}
             >
-              <img
-                src={image || "/placeholder.svg"}
-                alt={`Miniatura ${index + 1}`}
-                className="w-full h-full object-cover"
-              />
+              {isVideo(item) ? (
+                <div className="relative w-full h-full">
+                  <img
+                    src={firstImageThumbnail || item.url}
+                    className="w-full h-full object-cover"
+                  />
+
+                  <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
+                    <div className="w-10 h-10 rounded-full border border-white flex items-center justify-center">
+                      <div className="ml-1 w-0 h-0 border-l-[10px] border-l-white border-t-[6px] border-t-transparent border-b-[6px] border-b-transparent" />
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                <img
+                  src={`${item.url}?width=300&height=300&fit=cover`}
+                  className="w-full h-full object-cover"
+                />
+              )}
             </button>
           ))}
         </div>
       )}
+      {/* THUMBNAILS */}
+
+      {/* LIGHTBOX */}
+      {isOpen && (
+        <div className="fixed inset-0 bg-black/95 z-[9999] flex items-center justify-center">
+          {/* CLOSE */}
+          <button
+            onClick={() => setIsOpen(false)}
+            className="absolute top-6 right-6 text-white text-4xl"
+          >
+            ×
+          </button>
+
+          {/* PREV */}
+          {images.length > 1 && (
+            <button
+              onClick={goToPrevious}
+              className="absolute left-6 text-white"
+            >
+              <ChevronLeft size={48} />
+            </button>
+          )}
+
+          {/* IMAGE */}
+          {/* <img
+            src={currentItem.url}
+            className="max-h-[90vh] max-w-[90vw] object-contain"
+          /> */}
+          {isVideo(currentItem) ? (
+            <video
+              key={currentItem.url}
+              src={currentItem.url}
+              controls
+              autoPlay
+              className="max-h-[90vh] max-w-[90vw] object-contain"
+              // className="w-full h-full object-contain"
+            />
+          ) : (
+            <img
+              src={currentItem.url}
+              className="max-h-[90vh] max-w-[90vw] object-contain"
+            />
+          )}
+
+          {/* NEXT */}
+          {images.length > 1 && (
+            <button onClick={goToNext} className="absolute right-6 text-white">
+              <ChevronRight size={48} />
+            </button>
+          )}
+        </div>
+      )}
     </div>
-  )
+  );
 }

@@ -1,0 +1,123 @@
+[
+    {
+      "slug": "casa-centro-olavarria-3d",
+      "title": "Casa amplia en zona centro",
+      "type": "Casa",
+      "address": "Rivadavia 2800",
+      "city": "Olavarria",
+      "price": 97000,
+      "description": "Propiedad ubicada en zona céntrica con excelente distribución. Cuenta con living comedor amplio, cocina equipada y patio con parrilla. Ideal para familia.",
+      "bedrooms": 3,
+      "bathrooms": 2,
+      "area": 150
+    },
+    {
+      "slug": "departamento-moderno-olavarria-2d",
+      "title": "Departamento moderno con balcón",
+      "type": "Departamento",
+      "address": "San Martín 3200",
+      "city": "Olavarria",
+      "price": 68000,
+      "description": "Departamento luminoso con balcón al frente y cocina integrada. Excelente opción para vivienda o inversión.",
+      "bedrooms": 2,
+      "bathrooms": 1,
+      "area": 75
+    },
+    {
+      "slug": "casa-quinta-sierras-bayas",
+      "title": "Casa quinta con amplio parque",
+      "type": "Casa Quinta",
+      "address": "Los Pinos 450",
+      "city": "Sierras bayas",
+      "price": 120000,
+      "description": "Hermosa propiedad rodeada de naturaleza con parque arbolado y galería semicubierta. Ambientes cómodos y luminosos.",
+      "bedrooms": 3,
+      "bathrooms": 2,
+      "area": 220
+    },
+    {
+      "slug": "duplex-sierra-chica-2d",
+      "title": "Dúplex funcional en barrio residencial",
+      "type": "Dúplex",
+      "address": "Belgrano 780",
+      "city": "Sierra chica",
+      "price": 72000,
+      "description": "Propiedad distribuida en dos plantas con diseño práctico y patio trasero.",
+      "bedrooms": 2,
+      "bathrooms": 2,
+      "area": 95
+    },
+    {
+      "slug": "casa-familiar-colonia-hinojo",
+      "title": "Casa familiar en entorno tranquilo",
+      "type": "Casa",
+      "address": "Mitre 1400",
+      "city": "Colonia hinojo",
+      "price": 64000,
+      "description": "Vivienda con buena distribución interna y espacios amplios. Ideal para familia.",
+      "bedrooms": 3,
+      "bathrooms": 1,
+      "area": 120
+    },
+    {
+      "slug": "casa-economica-loma-negra",
+      "title": "Casa económica con patio",
+      "type": "Casa",
+      "address": "Sarmiento 1150",
+      "city": "Loma negra",
+      "price": 55000,
+      "description": "Propiedad funcional con ambientes bien aprovechados y patio trasero.",
+      "bedrooms": 2,
+      "bathrooms": 1,
+      "area": 85
+    },
+    {
+      "slug": "departamento-centro-olavarria-1d",
+      "title": "Departamento céntrico ideal inversión",
+      "type": "Departamento",
+      "address": "Vicente López 3050",
+      "city": "Olavarria",
+      "price": 52000,
+      "description": "Unidad en excelente ubicación céntrica con buena iluminación natural.",
+      "bedrooms": 1,
+      "bathrooms": 1,
+      "area": 50
+    },
+    {
+      "slug": "casa-residencial-olavarria-4d",
+      "title": "Casa residencial de categoría",
+      "type": "Casa",
+      "address": "Pellegrini 2100",
+      "city": "Olavarria",
+      "price": 155000,
+      "description": "Propiedad de categoría con excelentes terminaciones y patio con parrilla.",
+      "bedrooms": 4,
+      "bathrooms": 3,
+      "area": 230
+    },
+    {
+      "slug": "casa-parque-sierras-bayas",
+      "title": "Casa con parque en zona natural",
+      "type": "Casa",
+      "address": "Las Acacias 300",
+      "city": "Sierras bayas",
+      "price": 76000,
+      "description": "Vivienda con amplio terreno y entorno natural ideal para descanso.",
+      "bedrooms": 2,
+      "bathrooms": 1,
+      "area": 130
+    },
+    {
+      "slug": "duplex-moderno-colonia-hinojo",
+      "title": "Dúplex moderno con patio",
+      "type": "Dúplex",
+      "address": "Alem 600",
+      "city": "Colonia hinojo",
+      "price": 69000,
+      "description": "Dúplex moderno con cocina integrada, living luminoso y patio privado.",
+      "bedrooms": 2,
+      "bathrooms": 2,
+      "area": 100
+    }
+  ]
+  
