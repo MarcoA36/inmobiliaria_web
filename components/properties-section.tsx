@@ -1,7 +1,6 @@
 import Link from "next/link"
 import { getProperties } from "@/lib/get-properties"
 import { PropertyCard } from "./property-card"
-import { Property } from "@/types/property"
 
 export async function PropertiesSection() {
   const { properties } = await getProperties()

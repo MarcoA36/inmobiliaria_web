@@ -9,14 +9,23 @@ import { WhatsAppButton } from "@/components/whatsapp-button";
 import { Footer } from "@/components/footer";
 import { getPropertyById } from "@/lib/get-property";
 
-export default async function PropertyDetailPage({
-  params,
-}: {
-  params: { id: string };
-}) {
+// export default async function PropertyDetailPage({
+//   params,
+// }: {
+//   params: { id: string };
+// }) {
+//   const id = params.id;
+
+//   const property = await getPropertyById(id);
+
+//   if (!property) {
+//     notFound();
+//   }
+
+export default function PropertyDetailPage({ params }: { params: { id: string } }) {
   const id = params.id;
 
-  const property = await getPropertyById(id);
+  const property = getPropertyById(id);
 
   if (!property) {
     notFound();

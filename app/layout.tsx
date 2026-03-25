@@ -50,6 +50,7 @@ import { WhatsAppButton } from "@/components/whatsapp-button";
 import "./globals.css";
 import { Hero } from "@/components/hero";
 import { ContactForm } from "@/components/contact-form";
+import DemoBadge from "@/components/DemoBadge";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -79,6 +80,7 @@ export default function RootLayout({
         
         <ContactForm />
         <WhatsAppButton />
+        <DemoBadge/>
         <Footer />
 
         <Analytics />

@@ -9,7 +9,11 @@
       "description": "Propiedad ubicada en zona céntrica con excelente distribución. Cuenta con living comedor amplio, cocina equipada y patio con parrilla. Ideal para familia.",
       "bedrooms": 3,
       "bathrooms": 2,
-      "area": 150
+      "area": 150,
+       "images": [
+      "/inmo-fotos/casa1-a.jpg",
+      "/inmo-fotos/casa1-b.jpg"
+    ]
     },
     {
       "slug": "departamento-moderno-olavarria-2d",
@@ -21,7 +25,11 @@
       "description": "Departamento luminoso con balcón al frente y cocina integrada. Excelente opción para vivienda o inversión.",
       "bedrooms": 2,
       "bathrooms": 1,
-      "area": 75
+      "area": 75,
+       "images": [
+      "/inmo-fotos/casa1-a.jpg",
+      "/inmo-fotos/casa1-b.jpg"
+    ]
     },
     {
       "slug": "casa-quinta-sierras-bayas",

@@ -1,51 +1,62 @@
-import { fetchFromDirectus, DIRECTUS_URL } from "./api";
+// import { fetchFromDirectus, DIRECTUS_URL } from "./api";
 
-export async function getPropertyById(id: string) {
-  // try {
-  //   const path = `/items/properties/${id}?fields=*,images.directus_files_id`;
+// export async function getPropertyById(id: string) {
 
-  //   console.log("🔗 URL generada:", `${DIRECTUS_URL}${path}`);
+//   try {
+//     const path = `/items/properties/${id}?fields=*,images.directus_files_id.id,images.directus_files_id.type`;
 
-  //   const data = await fetchFromDirectus(path);
+//     const data = await fetchFromDirectus(path);
 
-  //   console.log("📦 Respuesta de Directus:", JSON.stringify(data, null, 2));
+//     if (!data || !data.data) return null;
 
-  //   if (!data || !data.data) return null;
+//     const property = data.data;
 
-  //   const property = data.data;
+//     const images =
+//       property.images?.map((item: any) => {
+//         const file = item.directus_files_id;
 
-  //   // Generamos URLs de imágenes
-  //   const images = property.images?.map((img: any) => {
-  //     const url = `${DIRECTUS_URL}/assets/${img.directus_files_id}`;
-  //     console.log("➡ IMAGE URL GENERATED:", url);
-  //     return url;
-  //   }) || [];
-  try {
-    const path = `/items/properties/${id}?fields=*,images.directus_files_id.id,images.directus_files_id.type`;
+//         return {
+//           id: file.id,
+//           url: `${DIRECTUS_URL}/assets/${file.id}`,
+//           type: file.type, // <-- acá está la magia
+//         };
+//       }) || [];
 
-    const data = await fetchFromDirectus(path);
+//     return {
+//       ...property,
+//       images,
+//     };
+//   } catch (error) {
+//     console.error("❌ Error en getPropertyById:", error);
+//     return null;
+//   }
+// }
+import propertiesData from "@/data/properties.json"
 
-    if (!data || !data.data) return null;
+export function getPropertyById(id: string) {
+  const property = propertiesData.find(
+    (p) => String(p.id) === id || p.slug === id
+  )
 
-    const property = data.data;
+  if (!property) return null
 
-    const images =
-      property.images?.map((item: any) => {
-        const file = item.directus_files_id;
+  // const images =
+  //   property.images?.map((img: string, index: number) => ({
+  //     id: index,
+  //     url: img,
+  //     type: "image/webp",
+  //   })) || []
+  const images =
+  property.images?.map((img: string, index: number) => ({
+    id: String(index), // 👈 CAMBIÁ SOLO ESTO
+    url: img,
+    type: "image/webp",
+  })) || []
 
-        return {
-          id: file.id,
-          url: `${DIRECTUS_URL}/assets/${file.id}`,
-          type: file.type, // <-- acá está la magia
-        };
-      }) || [];
-
-    return {
-      ...property,
-      images,
-    };
-  } catch (error) {
-    console.error("❌ Error en getPropertyById:", error);
-    return null;
+  return {
+    ...property,
+    price: `$${property.price.toLocaleString("es-AR")}`,
+    image: images[0]?.url || "/placeholder.svg",
+    images,
   }
 }
